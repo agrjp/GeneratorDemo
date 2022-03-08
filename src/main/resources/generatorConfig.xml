@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <!--导入配置 -->
+    <properties resource="jdbc.properties"/>
+
+    <!-- context 一般是一个数据源一个context -->
+    <!-- MyBatis3Simple、MyBatis3 或 MyBatis3DynamicSql  -->
+    <context id="default" targetRuntime="MyBatis3DynamicSql" defaultModelType="flat">
+        <!-- 插件 -->
+        <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin">
+            <property name="useEqualsHashCodeFromRoot" value="true"/>
+        </plugin>
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin">
+            <property name="useToStringFromRoot" value="true"/>
+        </plugin>
+        <plugin type="org.mybatis.generator.plugins.MapperAnnotationPlugin"/>
+        <plugin type="org.mybatis.generator.plugins.FluentBuilderMethodsPlugin"/>
+
+        <!--jdbc的数据库连接 -->
+        <jdbcConnection
+                driverClass="${jdbc.driver}"
+                connectionURL="${jdbc.url}"
+                userId="${jdbc.username}"
+                password="${jdbc.password}">
+        </jdbcConnection>
+
+        <!-- 类型解析器 -->
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="true"/>
+        </javaTypeResolver>
+
+        <!-- 实体类 -->
+        <javaModelGenerator
+                targetPackage="com.example.generatordemo.entity"
+                targetProject="src/main/java">
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="com.spring_boot_flutter_work_app.entity" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <!-- Mapper接口 -->
+        <javaClientGenerator type="XML-MAPPER"
+                             targetPackage="com.example.generatordemo.mapper"
+                             targetProject="src/main/java">
+        </javaClientGenerator>
+
+        <!-- 指定数据库表 确保数据库中 表存在-->
+        <table tableName="user"/>
+
+    </context>
+</generatorConfiguration>
