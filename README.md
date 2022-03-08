@@ -1,7 +1,10 @@
 # GeneratorDemo
 
-
 # Getting Started
+
+My Batis Generator Demo
+
+可以快速生成 entity、mapper 又可以不用写xml 
 
 官网文档: http://mybatis.org/generator/index.html
 
@@ -16,3 +19,6 @@
 
 5、点击
 ![img.png](img.png)
+
+6、作者
+  
