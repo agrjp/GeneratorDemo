@@ -4,7 +4,7 @@
 
 My Batis Generator Demo
 
-可以快速生成 entity、mapper 又可以不用写xml 
+可以快速生成 entity、mapper 废除了xml 
 
 官网文档: http://mybatis.org/generator/index.html
 
@@ -18,7 +18,10 @@ My Batis Generator Demo
 4、配置generatorConfig.xml
 
 5、点击
-![img.png](img.png)
+![img.png](img/img.png)
 
 6、作者
+
+抖音 bilibili 搜索：程序员kkk
+
   
